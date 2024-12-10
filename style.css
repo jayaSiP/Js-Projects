@@ -1,0 +1,264 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*:not(i) {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ae9cff, #6a47ff, #ff74c6, #6a47ff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Bubbles container with floating bubbles */
+.bubbles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none; /* Prevent bubbles from interfering with clicks */
+    overflow: hidden; /* Prevent bubbles from overflowing */
+}
+
+/* Bubble styles */
+.bubble {
+    position: absolute;
+    font-size: 18px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    padding: 15px;
+    text-align: center;
+    opacity: 0.8;
+    animation: floatBubble 10s infinite ease-in-out, rotateBubble 15s infinite linear;
+    animation-delay: calc(2s * var(--i)); /* Different animation delays for each bubble */
+    transform-origin: center;
+}
+
+/* Bubble animation for floating upwards */
+@keyframes floatBubble {
+    0% {
+        transform: translateX(0) translateY(0);
+        opacity: 0.8;
+    }
+    25% {
+        transform: translateX(50px) translateY(-100px);
+        opacity: 1;
+    }
+    50% {
+        transform: translateX(-150px) translateY(200px);
+        opacity: 0.8;
+    }
+    75% {
+        transform: translateX(100px) translateY(-50px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0) translateY(0);
+        opacity: 0.8;
+    }
+}
+
+/* Rotate animation for a bit of dynamic movement */
+@keyframes rotateBubble {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(45deg);
+    }
+}
+
+/* Styling the individual bubbles */
+.bubble:nth-child(1) {
+    --i: 0;
+    top: 10%; left: 15%;
+}
+.bubble:nth-child(2) {
+    --i: 1;
+    top: 10%; left: 50%;
+}
+.bubble:nth-child(3) {
+    --i: 2;
+    top: 60%; left: 80%;
+}
+.bubble:nth-child(4) {
+    --i: 3;
+    top: 20%; left: 5%;
+}
+.bubble:nth-child(5) {
+    --i: 4;
+    top: 20%; left: 70%;
+}
+.bubble:nth-child(6) {
+    --i: 5;
+    top: 80%; left: 10%;
+}
+.bubble:nth-child(7) {
+    --i: 6;
+    top: 40%; left: 80%;
+}
+.bubble:nth-child(8) {
+    --i: 7;
+    top: 40%; left: 20%;
+}
+.bubble:nth-child(9) {
+    --i: 8;
+    top: 20%; left: 40%;
+}
+.bubble:nth-child(10) {
+    --i: 9;
+    top: 80%; left: 60%;
+}
+.bubble:nth-child(11) {
+    --i: 10;
+    top: 10%; left: 85%;
+}
+.bubble:nth-child(12) {
+    --i: 11;
+    top: 90%; left: 35%;
+}
+
+/* The container for the search and result box */
+.container {
+    background-color: #ffffff;
+    width: 90vmin;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 80px 50px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(38, 33, 61, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Container hover effect */
+.container:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 25px 50px rgba(38, 33, 61, 0.3);
+}
+
+.search-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 70%;
+    border: none;
+    outline: none;
+    border-bottom: 3px solid #ae9cff;
+    font-size: 16px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: #6a47ff;
+    transform: scale(1.05);  /* Slightly zoom the input field */
+}
+
+.search-box button {
+    padding: 15px 0;
+    width: 25%;
+    background-color: #ae9cff;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #6a47ff; /* Darker shade of the original color */
+    transform: translateY(-5px); /* Slightly lift the button */
+    box-shadow: 0 5px 15px rgba(38, 33, 61, 0.3); /* Add a shadow on hover */
+}
+
+.result {
+    position: relative;
+}
+
+.result h3 {
+    font-size: 30px;
+    color: #1f194c;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Adding text shadow for better readability */
+}
+
+.result .word {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+.result button {
+    background-color: transparent;
+    color: #ae9cff;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.result button:hover {
+    color: #6a47ff;
+}
+
+.result .details {
+    display: flex;
+    gap: 10px;
+    color: #b3b6d4;
+    margin: 5px 0 20px 0;
+    font-size: 14px;
+}
+
+.word-meaning {
+    color: #575a7b;
+}
+
+.word-example {
+    color: #575a7b;
+    font-style: italic;
+    border-left: 5px solid #ae9cff;
+    padding-left: 20px;
+    margin-top: 30px;
+    transition: border-color 0.3s ease;
+}
+
+.word-example:hover {
+    border-color: #6a47ff;
+}
+
+.error {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 20px;
+    color: #ff6b81;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Animation for error message */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

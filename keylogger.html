@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Key Logger</title>
+    <link rel="stylesheet" href="keylogger.css">
+    <!--- <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      }
+      h2 {
+        border: 2px solid black;
+        padding: 2px;
+      }
+      #log,
+      #state {
+        width: 500px;
+        height: 50px;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 1px;
+        font-size: 20px;
+        text-align: center;
+        margin-top: 20px;
+        background-color: #dd9c04;
+      }
+      .outer {
+        display: flex;
+        flex-direction: row;
+      }
+      button {
+        font-size: 20px;
+        padding: 10px;
+        margin: 20px;
+        margin-top: 20px;
+      }
+    </style> --->
+  </head>
+  <body>
+    <div class="container">
+      <h2>Key Logger</h2>
+      <p>DO something on your keyboard</p>
+      <div class="button-container">
+        <button id="start">Start Logging the Keypresses</button>
+        <button id="stop">Stop Logging the Keypresses</button>
+      </div>
+      <div class="outer">
+        <div id="log"></div>
+        <div id="state"></div>
+      </div>
+    </div>
+    <script src="keylogger.js"></script>
+  </body>
+</html>

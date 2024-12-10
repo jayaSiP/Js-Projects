@@ -1,0 +1,144 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Body Styles */
+  body {
+    background: linear-gradient(to bottom, #C6E7FF, #D4F6FF, #BCCCDC, #9AA6B2); /* Gradient from light blue to muted blue */
+    color: #333; /* Dark text color for readability */
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-size: 100% 400%; /* Expand gradient to cover the entire page */
+    background-position: top; /* Position the gradient at the top of the page */
+    flex-direction: column;
+  }
+  
+  /* Title Positioning */
+  h1 {
+    font-size: 32px;
+    color: #9AA6B2; /* Muted Blue for the title */
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); /* Center the title vertically */
+    margin: 0;
+  }
+  
+  /* Main Content Container */
+  .container {
+    background-color: #FBFBFB; /* Very Light Gray */
+    border-radius: 10px;
+    padding: 40px 50px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px; /* Adjusted top margin to account for the title's position */
+    padding-top: 60px; /* Adds space above the content */
+  }
+  
+  /* Button Styling */
+  button {
+    font-size: 18px;
+    padding: 14px 30px;
+    background-color: #FFDDAE; /* Soft Apricot */
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    width: 50%; /* More professional button width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:hover {
+    background-color: #FFCA80; /* Slightly darker apricot on hover */
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* Palette Display */
+  .palette {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px; /* Increased spacing for more professional feel */
+  }
+  
+  .palette div {
+    width: 30%;
+    height: 120px; /* Slightly taller color blocks */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .palette div:hover {
+    transform: scale(1.05); /* Subtle hover effect */
+  }
+  
+  /* Color Codes */
+  .color-codes {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+  }
+  
+  .color-codes span {
+    margin: 5px;
+    padding: 10px;
+    background-color: #D9EAFD; /* Soft Light Blue */
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .color-codes span:hover {
+    background-color: #BCCCDC; /* Cool Grayish Blue */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      padding: 30px 40px;
+    }
+  
+    h1 {
+      font-size: 28px;
+      position: fixed;
+    }
+  
+    button {
+      width: 100%;
+      font-size: 16px;
+    }
+  
+    .palette {
+      flex-direction: column;
+    }
+  
+    .palette div {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
